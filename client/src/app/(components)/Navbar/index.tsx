@@ -4,7 +4,7 @@ import { setIsSidebarCollapsed, setIsDarkMode } from "@/state/index";
 import { Menu, Bell, Sun, Settings } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import Profile from "../../../../../server/assets/logo.png";
+import Profile from "../../../../../server/assets/profile.jpg";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();

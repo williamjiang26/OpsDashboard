@@ -1,10 +1,14 @@
 "use client";
 
-import { useCreateProductMutation, useGetProductsQuery } from "@/state/api";
+import {
+  useCreateProductMutation,
+  useDeleteProductMutation,
+  useGetProductsQuery,
+} from "@/state/api";
 import { useState } from "react";
 import Header from "@/app/(components)/Header/index";
 import Rating from "@/app/(components)/Rating/index";
-import { SearchIcon, PlusCircleIcon } from "lucide-react";
+import { SearchIcon, PlusCircleIcon, TrashIcon } from "lucide-react";
 import CreateProductModal from "./CreateProductModal";
 
 type ProductFormData = {
@@ -17,21 +21,25 @@ type ProductFormData = {
 const Products = () => {
   const [searchTerm, setSearchTerm] = useState(" ");
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   const {
     data: products,
     isLoading,
     isError,
   } = useGetProductsQuery(searchTerm);
-
   const [createProduct] = useCreateProductMutation();
+  const [deleteProduct] = useDeleteProductMutation();
+
   const handleCreateProduct = async (productData: ProductFormData) => {
     await createProduct(productData);
+  };
+  const handleDelete = async (productId: string) => {
+    await deleteProduct(productId);
   };
 
   if (isLoading) {
     return <div className="py-4">Loading...</div>;
   }
-
   if (isError || !products) {
     return (
       <div className="text-center text-red-500 py-4">
@@ -39,6 +47,7 @@ const Products = () => {
       </div>
     );
   }
+  
   return (
     <div className="mx-auto pb-5 w-full">
       {/* Search Bar */}
@@ -76,6 +85,7 @@ const Products = () => {
               key={product.productId}
               className="border shadow rounded-md p-4 max-h-full w-full mx-auto"
             >
+              {product.productId}
               <div className="flex flex-col items-center">
                 img
                 <h3 className="text-lg text-gray-900 font-semibold">
@@ -90,6 +100,9 @@ const Products = () => {
                     <Rating rating={product.rating} />
                   </div>
                 )}
+                <button>
+                  <TrashIcon onClick={() => handleDelete(product.productId)} />
+                </button>
               </div>
             </div>
           ))

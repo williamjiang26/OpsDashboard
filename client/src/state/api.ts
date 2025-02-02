@@ -1,3 +1,4 @@
+import Products from "@/app/products/page";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export interface Product {
@@ -80,6 +81,14 @@ export const api = createApi({
       }),
       invalidatesTags: ["Products"],
     }),
+    deleteProduct: build.mutation<Product[], string | void>({
+      query: (productId) => ({
+        url: "/products",
+        params: productId ? { productId } : {},
+        method: "POST",
+      }),
+      providesTags: ["Products"],
+    }),
     getUsers: build.query<User[], void>({
       query: () => "/users",
       providesTags: ["Users"],
@@ -95,6 +104,7 @@ export const {
   useGetDashboardMetricsQuery,
   useGetProductsQuery,
   useCreateProductMutation,
+  useDeleteProductMutation,
   useGetUsersQuery,
   useGetExpensesByCategoryQuery,
 } = api;

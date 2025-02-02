@@ -126,16 +126,14 @@ const CardSalesSummary = () => {
               </BarChart>
             </ResponsiveContainer>
           </div>
+
           {/* Footer */}
-          <div>
-            <hr />
-            <div className="flex justify-between items-center mt-6 text-sm px-7 mb-4">
-              <p>{salesData.length || 0} days</p>
-              <p className="text-sm">
-                Highest Sales Date:{" "}
-                <span className="font-bold">{highestValueDate}</span>
-              </p>
-            </div>
+          <div className="flex justify-between items-center mt-1 text-sm px-7 mb-4">
+            <p>{salesData.length || 0} days</p>
+            <p className="text-sm">
+              Highest Sales Date:{" "}
+              <span className="font-bold">{highestValueDate}</span>
+            </p>
           </div>
         </>
       )}

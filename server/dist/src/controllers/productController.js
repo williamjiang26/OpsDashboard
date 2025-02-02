@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createProduct = exports.getProducts = void 0;
+exports.deleteProduct = exports.createProduct = exports.getProducts = void 0;
 const client_1 = require("../../node_modules/.prisma/client");
 const prisma = new client_1.PrismaClient();
 const getProducts = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -49,3 +49,21 @@ const createProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     }
 });
 exports.createProduct = createProduct;
+const deleteProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    var _a, _b;
+    try {
+        const id = (_a = req.query.productId) === null || _a === void 0 ? void 0 : _a.toString();
+        console.log(id);
+        const deleteUsers = yield prisma.products.deleteMany({
+            where: {
+                productId: {
+                    contains: (_b = req.query.productId) === null || _b === void 0 ? void 0 : _b.toString(),
+                },
+            },
+        });
+    }
+    catch (error) {
+        res.status(500).json({ message: "Error deleting product" });
+    }
+});
+exports.deleteProduct = deleteProduct;

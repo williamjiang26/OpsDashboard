@@ -25,13 +25,13 @@ const CardPopularProducts = () => {
               >
                 <div className="flex items-center gap-3">
                   <div>
-                    {" "}
+                    
                     <Image
                       src={image}
                       width={50}
                       height={50}
                       alt="product1"
-                    />{" "}
+                    />
                   </div>
                   <div className="flex flex-col justify-between gap-1">
                     <div className="font-bold text-gray-700">

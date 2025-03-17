@@ -10,6 +10,8 @@ import Header from "@/app/(components)/Header/index";
 import Rating from "@/app/(components)/Rating/index";
 import { SearchIcon, PlusCircleIcon, TrashIcon } from "lucide-react";
 import CreateProductModal from "./CreateProductModal";
+import image from "../../../../server/assets/product1.png"
+import Image from "next/image";
 
 type ProductFormData = {
   name: string;
@@ -47,7 +49,7 @@ const Products = () => {
       </div>
     );
   }
-  
+
   return (
     <div className="mx-auto pb-5 w-full">
       {/* Search Bar */}
@@ -85,9 +87,14 @@ const Products = () => {
               key={product.productId}
               className="border shadow rounded-md p-4 max-h-full w-full mx-auto"
             >
-              {product.productId}
               <div className="flex flex-col items-center">
-                img
+                {/* add src to be from product.image */}
+                <Image
+                  src={image}
+                  width={50}
+                  height={50}
+                  alt="product1"
+                />
                 <h3 className="text-lg text-gray-900 font-semibold">
                   {product.name}
                 </h3>

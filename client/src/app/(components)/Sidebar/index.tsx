@@ -76,18 +76,18 @@ const Sidebar = () => {
         }`}
       >
         <Image
-              src={Logo}
-              alt="Profile"
-              width={27}
-              height={27}
-              className="rounded w-8"
-            />
+          src={Logo}
+          alt="Profile"
+          width={27}
+          height={27}
+          className="rounded w-8"
+        />
         <h1
           className={`${
             isSidebarCollapsed ? "hidden" : "block"
           } font-extrabold text-2xl`}
         >
-          STOCKX
+          Ops Dash
         </h1>
 
         <button
@@ -140,7 +140,9 @@ const Sidebar = () => {
 
       {/* Footer */}
       <div>
-        <p className="text-center text-xs text-gray-500">&copy; 2024 STOCK</p>
+        <p className="text-center text-xs text-gray-500">
+          &copy; 2025 Ops Dash
+        </p>
       </div>
     </div>
   );

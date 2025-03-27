@@ -26,7 +26,7 @@ const Navbar = () => {
 
       <div className="flex justify-between items-center gap-5">
         <button
-          className="px-3 py-3 bg-gray-100 rounded-full hover:bg-blue-100"
+          className="px-3 py-3 border-2 border-gray-300 bg-blue text-blue-500 rounded-full hover:bg-blue-100"
           onClick={toggleSidebar}
         >
           <Menu className="w-4 h-4" />

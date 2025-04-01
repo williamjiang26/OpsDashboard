@@ -2,30 +2,35 @@
 Biz Dashboard is designed for business owners to handle all their business processes including order fulfillment, inventory management, project scheduling, and more through a intuitive, clean and simple to use interface. 
 
 # Goals:
-Engineer a microservices architecture and implement the most essential business ops features. 
+Engineer using microservices architecture and implement the most essential business processes. 
 
 # Built using
 Frontend:
 Backend:
 Libraries:
 
+## Services
+- inventory
+- books
+- orders
+- customers
+- schedule projects
+
 ## Data Model
-The application will store Users, Inventory Directory, and a mapping/layout of warehouse space
 
-
-* managers can have access to multiple users
-* each staff has a list of tasks (via forms)
-* users have access to inventory directory and warehouse map 
-* each list can have multiple items (by embedding)
-* users can have multiple lists (via references)
-
-An Example User:
+* As a manager, I can view upcoming projects, view my inventory, view open orders, view all invoices, view customers.
+* As a staff I can view my assigned projects, items located in inventory, customer contact info.
 
 ```javascript
+Inventory Data Models
+Item
 {
-  username: "manager",
-  password: // a login password hash,
-  staff: // an array of references to staff lists
+  name: str, 
+  size: str,  // ex. 2" x 4"
+  color: str,    
+  section: str, // ex. A
+  row: int, // ex. 1
+  img: url,    // a url of the image
 }
 {
   username: "staff",

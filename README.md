@@ -5,9 +5,9 @@ Biz Dashboard is designed for business owners to handle all their business proce
 Engineer using microservices architecture and implement the most essential business processes. 
 
 # Built using
-Frontend:
+Frontend: NextJs, ReactJs
 
-Backend:
+Backend: AWS, MongoDB, ExpressJs/NodeJs
 
 Libraries:
 

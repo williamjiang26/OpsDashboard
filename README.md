@@ -93,7 +93,7 @@ Project Schedule Data Models
 
 
 ## Site map
-![Site Map](documentation/Customer.pdf)
+![Site Map](documentation/Sitemap.png)
 
 ## User Stories or Use Cases
 * As a manager, I can view upcoming projects, view my inventory, view open orders, view all invoices, view customers.

@@ -1,6 +1,6 @@
 import { useGetDashboardMetricsQuery } from "@/state/api";
 import { useState } from "react";
-import { TrendingUp, TrendingDown } from "lucide-react";
+import { TrendingUp } from "lucide-react";
 import {
   ResponsiveContainer,
   BarChart,
@@ -10,7 +10,7 @@ import {
   Tooltip,
   Bar,
 } from "recharts";
-import { arrayBuffer } from "stream/consumers";
+
 
 const CardSalesSummary = () => {
   const { data, isLoading, isError } = useGetDashboardMetricsQuery();

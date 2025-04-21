@@ -7,7 +7,7 @@ import {
 import { useState } from "react";
 import Header from "@/app/(components)/Header/index";
 import Rating from "@/app/(components)/Rating/index";
-import { SearchIcon, PlusCircleIcon, TrashIcon } from "lucide-react";
+import { SearchIcon, PlusCircleIcon } from "lucide-react";
 import CreateProductModal from "./CreateProductModal";
 import image from "../../../../server/assets/product1.png"
 import Image from "next/image";

@@ -4,7 +4,6 @@ import { setIsSidebarCollapsed, setIsDarkMode } from "@/state/index";
 import { Menu, Bell, Sun, Settings } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import Profile from "../../../../../server/assets/profile.jpg";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
@@ -61,7 +60,7 @@ const Navbar = () => {
           <hr className="w-0 h-7 border border-solid border-l border-gray-300 mx-3" />
           <div className="flex items-center gap-3 cursor-pointer">
             <Image
-              src={Profile}
+              src="https://s3-inventorymanagee.s3.us-east-1.amazonaws.com/profile.jpg"
               alt="Profile"
               width={50}
               height={50}

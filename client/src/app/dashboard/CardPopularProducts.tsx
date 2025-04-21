@@ -27,10 +27,10 @@ const CardPopularProducts = () => {
                   <div>
                     
                     <Image
-                      src={image}
+                      src={`https://s3-inventorymanagee.s3.us-east-1.amazonaws.com/product${Math.floor(Math.random() + 3) + 1}.png`}
                       width={50}
                       height={50}
-                      alt="product1"
+                      alt={product.name}
                     />
                   </div>
                   <div className="flex flex-col justify-between gap-1">

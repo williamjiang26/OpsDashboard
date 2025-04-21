@@ -1,15 +1,12 @@
 "use client";
 
-import {
-  useCreateProductMutation,
-  useGetProductsQuery,
-} from "@/state/api";
+import { useCreateProductMutation, useGetProductsQuery } from "@/state/api";
 import { useState } from "react";
 import Header from "@/app/(components)/Header/index";
 import Rating from "@/app/(components)/Rating/index";
 import { SearchIcon, PlusCircleIcon } from "lucide-react";
 import CreateProductModal from "./CreateProductModal";
-import image from "../../../../server/assets/product1.png"
+import image from "../../../../server/assets/product1.png";
 import Image from "next/image";
 
 type ProductFormData = {
@@ -33,7 +30,6 @@ const Products = () => {
   const handleCreateProduct = async (productData: ProductFormData) => {
     await createProduct(productData);
   };
-
 
   if (isLoading) {
     return <div className="py-4">Loading...</div>;
@@ -86,10 +82,13 @@ const Products = () => {
               <div className="flex flex-col items-center">
                 {/* add src to be from product.image */}
                 <Image
-                  src={image}
-                  width={50}
-                  height={50}
-                  alt="product1"
+                  src={`https://s3-inventorymanagee.s3.us-east-1.amazonaws.com/product${
+                    Math.floor(Math.random() * 3) + 1
+                  }.png`}
+                  width={150}
+                  height={150}
+                  alt={product.name}
+                  className="mb-3 rounded-2xl w-36 h-36"
                 />
                 <h3 className="text-lg text-gray-900 font-semibold">
                   {product.name}

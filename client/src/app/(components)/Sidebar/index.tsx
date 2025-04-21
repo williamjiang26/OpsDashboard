@@ -76,7 +76,7 @@ const Sidebar = () => {
         }`}
       >
         <Image
-          src={Logo}
+          src="https://s3-inventorymanagee.s3.us-east-1.amazonaws.com/logo.png"
           alt="Profile"
           width={27}
           height={27}

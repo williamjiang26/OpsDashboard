@@ -2,7 +2,6 @@
 
 import {
   useCreateProductMutation,
-  useDeleteProductMutation,
   useGetProductsQuery,
 } from "@/state/api";
 import { useState } from "react";
@@ -30,14 +29,11 @@ const Products = () => {
     isError,
   } = useGetProductsQuery(searchTerm);
   const [createProduct] = useCreateProductMutation();
-  const [deleteProduct] = useDeleteProductMutation();
 
   const handleCreateProduct = async (productData: ProductFormData) => {
     await createProduct(productData);
   };
-  const handleDelete = async (productId: string) => {
-    await deleteProduct(productId);
-  };
+
 
   if (isLoading) {
     return <div className="py-4">Loading...</div>;
@@ -107,9 +103,9 @@ const Products = () => {
                     <Rating rating={product.rating} />
                   </div>
                 )}
-                <button>
+                {/* <button>
                   <TrashIcon onClick={() => handleDelete(product.productId)} />
-                </button>
+                </button> */}
               </div>
             </div>
           ))
